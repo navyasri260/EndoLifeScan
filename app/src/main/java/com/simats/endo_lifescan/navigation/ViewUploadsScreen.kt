@@ -78,21 +78,21 @@ fun ViewUploadsScreen(
 
             UploadedImageCard(
                 title = "Segment 1",
-                placeholderRes = R.drawable.ic_launcher_foreground
+                placeholderRes = R.drawable.app_logo
             )
 
             Spacer(modifier = Modifier.height(16.dp))
 
             UploadedImageCard(
                 title = "Segment 2",
-                placeholderRes = R.drawable.ic_launcher_foreground
+                placeholderRes = R.drawable.app_logo
             )
 
             Spacer(modifier = Modifier.height(16.dp))
 
             UploadedImageCard(
                 title = "Segment 3",
-                placeholderRes = R.drawable.ic_launcher_foreground
+                placeholderRes = R.drawable.app_logo
             )
 
             Spacer(modifier = Modifier.weight(1f))
