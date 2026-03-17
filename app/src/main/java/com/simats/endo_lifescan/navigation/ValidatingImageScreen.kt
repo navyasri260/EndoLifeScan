@@ -129,7 +129,7 @@ fun ValidatingImageScreen(
             Spacer(modifier = Modifier.height(8.dp))
 
             Text(
-                text = "Checking quality parameters...",
+                text = "Verifying whether the uploaded image is an endodontic file...",
                 style = MaterialTheme.typography.bodyMedium
             )
 
