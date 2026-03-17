@@ -30,7 +30,8 @@ fun OtpScreen(
         modifier = Modifier
             .fillMaxSize()
             .padding(16.dp),
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center   // ✅ THIS LINE ADDED
     ) {
 
         Text("Reset Password", style = MaterialTheme.typography.headlineMedium)

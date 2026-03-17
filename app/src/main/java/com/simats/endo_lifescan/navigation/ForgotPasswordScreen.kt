@@ -24,10 +24,14 @@ fun ForgotPasswordScreen(navController: NavController) {
         modifier = Modifier
             .fillMaxSize()
             .padding(16.dp),
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center   // ✅ THIS centers everything
     ) {
 
-        Text("Forgot Password", style = MaterialTheme.typography.headlineMedium)
+        Text(
+            "Forgot Password",
+            style = MaterialTheme.typography.headlineMedium
+        )
 
         Spacer(modifier = Modifier.height(8.dp))
 
@@ -39,7 +43,7 @@ fun ForgotPasswordScreen(navController: NavController) {
             value = email,
             onValueChange = { email = it },
             label = { Text("Email Address") },
-            placeholder = { Text("dr.smith@clinic.com") },
+            placeholder = { Text("please enter your email here") },
             modifier = Modifier.fillMaxWidth()
         )
 
