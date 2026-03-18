@@ -118,7 +118,7 @@ fun LoginScreen(navController: NavController) {
                 color = Color.LightGray,textAlign = TextAlign.Center
             )
             Text(
-                text = "Powered by SIMATS",
+                text = "Powered by SIMATS Engineering",
                 fontSize = 12.sp,
                 color = Color.LightGray, textAlign = TextAlign.Center
             )
