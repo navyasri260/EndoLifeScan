@@ -17,6 +17,8 @@ import kotlinx.coroutines.withContext
 import okhttp3.RequestBody
 import okhttp3.RequestBody.Companion.toRequestBody
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import com.google.gson.Gson
+import com.simats.endo_lifescan.network.UploadResponse
 
 @Composable
 fun ValidatingImageScreen(
@@ -57,13 +59,17 @@ fun ValidatingImageScreen(
                 )
             }
 
-            if (response.isSuccessful && response.body() != null) {
+            val result = if (response.isSuccessful) {
+                response.body()
+            } else {
+                null
+            }
 
-                val result = response.body()!!
+            if (result != null) {
 
-                println("UPLOAD RESPONSE -> status=${result.status}, prediction=${result.prediction}")
+                println("UPLOAD RESPONSE -> isEndo=${result.isEndoFile}, prediction=${result.prediction}")
 
-                if (result.status == "success" && result.isEndoFile) {
+                if (result.isEndoFile == true) {
 
                     val segmentResultsText = result.segmentResults.joinToString(",") { segment ->
                         "${segment.name} - ${segment.status}"
@@ -88,16 +94,15 @@ fun ValidatingImageScreen(
                     )
                 }
 
-            } else {
-
-                resultMessage = "Upload failed"
-
+            }else {
+                resultMessage = "Server error: ${response.code()}"
             }
+
 
         } catch (e: Exception) {
 
             e.printStackTrace()
-            resultMessage = "Network error"
+            resultMessage = "Error: ${e.message}"
 
         } finally {
 

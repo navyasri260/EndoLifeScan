@@ -293,6 +293,24 @@ fun Navigation() {
                 backStackEntry.arguments?.getString("imageUri3")
             )
         }
+        // =========================
+        // FILE NOT VERIFIED
+        // =========================
+
+        composable(
+            route = "${Screen.FileNotVerified.route}/{name}/{email}",
+            arguments = listOf(
+                navArgument("name"){ type = NavType.StringType; nullable = true },
+                navArgument("email"){ type = NavType.StringType; nullable = true }
+            )
+        ) { backStackEntry ->
+
+            FileNotVerifiedScreen(
+                navController,
+                backStackEntry.arguments?.getString("name"),
+                backStackEntry.arguments?.getString("email")
+            )
+        }
 
         // =========================
         // FILE VERIFIED
