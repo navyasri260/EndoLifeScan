@@ -83,7 +83,7 @@ fun ResultScreen(
             ) {
 
                 Text(
-                    text = "CRITICAL WARNING",
+                    text = "FINAL RESULT",
                     fontWeight = FontWeight.Bold,
                     color = Color(0xFF1565C0)
                 )

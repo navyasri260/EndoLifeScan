@@ -58,7 +58,7 @@ fun RiskAssessmentScreen(navController: NavController, name: String?, email: Str
         ) {
             Column(modifier = Modifier.padding(20.dp), horizontalAlignment = Alignment.CenterHorizontally) {
                 Text(
-                    text = if (fractureRisk > 0.7f) "FINAL RESULT" else "ANALYSIS STABLE",
+                    text = if (fractureRisk > 0.7f) "FINAL RESULT" else "FINAL RESULT",
                     fontWeight = FontWeight.ExtraBold,
                     color = statusColor,
                     fontSize = 12.sp
