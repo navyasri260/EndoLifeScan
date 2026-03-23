@@ -7,6 +7,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import android.util.Patterns
 
 @Composable
 fun WelcomeBackScreen(navController: NavController) {
@@ -14,7 +15,7 @@ fun WelcomeBackScreen(navController: NavController) {
     var isError by remember { mutableStateOf(false) }
 
     fun validateEmail(): Boolean {
-        isError = !email.endsWith("@gmail.com")
+        isError = !Patterns.EMAIL_ADDRESS.matcher(email).matches()
         return !isError
     }
 
@@ -51,7 +52,7 @@ fun WelcomeBackScreen(navController: NavController) {
             isError = isError,
             supportingText = {
                 if (isError)
-                    Text("Must be a gmail.com address")
+                    Text("Enter a valid email address")
             }
         )
 

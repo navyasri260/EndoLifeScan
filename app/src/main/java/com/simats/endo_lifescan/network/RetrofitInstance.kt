@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit
 
 object RetrofitInstance {
     // Senior Architect: Using the confirmed local IP of your server
-    private const val BASE_URL = "http://10.124.144.191:5000/"
+    private const val BASE_URL = "http://172.17.16.191:5000/"
 
     private val client = OkHttpClient.Builder()
         .addInterceptor(HttpLoggingInterceptor().apply {

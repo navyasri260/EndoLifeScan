@@ -157,7 +157,7 @@ fun MagnifiedInspectionScreen(
                 heatmaps.forEach { heatmap ->
 
                     AsyncImage(
-                        model = "http://10.124.144.191:5000/uploads/$heatmap",
+                        model = "http://172.17.16.191:5000/uploads/$heatmap",
                         contentDescription = "AI Heatmap",
                         modifier = Modifier
                             .fillMaxWidth()
