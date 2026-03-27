@@ -25,6 +25,9 @@ fun HomeScreen(
     name: String?,
     email: String?
 ) {
+    val context = androidx.compose.ui.platform.LocalContext.current
+    val prefs = context.getSharedPreferences("user_prefs", 0)
+    val updatedName = prefs.getString("name", name ?: "User")
 
     Scaffold(
 
@@ -70,7 +73,7 @@ fun HomeScreen(
             )
 
             Text(
-                text = name ?: "User",
+                text = updatedName ?: "User",
                 fontSize = 28.sp,
                 fontWeight = FontWeight.Bold
             )

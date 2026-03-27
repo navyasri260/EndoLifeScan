@@ -170,6 +170,15 @@ fun EditProfileScreen(navController: NavController, name: String?, email: String
                         )
 
                     } else {
+
+                        val context = navController.context
+                        val prefs = context.getSharedPreferences("user_prefs", 0)
+
+                        prefs.edit()
+                            .putString("name", newName)
+                            .putString("email", newEmail)
+                            .apply()
+
                         showSuccessDialog = true
                     }
                 },
